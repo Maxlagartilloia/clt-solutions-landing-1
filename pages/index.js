@@ -176,6 +176,9 @@ export default function Home() {
               <a href="#faq" className="hover:text-clturq transition">
                 Preguntas frecuentes
               </a>
+              <a href="#formulario" className="hover:text-clturq transition">
+                Formulario
+              </a>
               <a href="#final" className="hover:text-clturq transition">
                 Último paso
               </a>
@@ -468,9 +471,8 @@ export default function Home() {
                   </li>
                   <li>
                     •{" "}
-                    <strong>
-                      Diseño completo valorado en $480
-                    </strong>, incluido sin costo para ti en esta oferta.
+                    <strong>Diseño completo valorado en $480</strong>, incluido
+                    sin costo para ti en esta oferta.
                   </li>
                   <li>
                     • <strong>Dominio</strong> (.com u otro disponible)
@@ -837,11 +839,140 @@ export default function Home() {
                     Seré directo: una página sola no hace magia. Lo que sí hace
                     es darte un lugar profesional donde mandar a la gente que ya
                     te está viendo en redes, en la calle o por recomendación. Si
-                    no publicas, no compartes tu página, no respondes, no
-                    sigues, ningún embudo del mundo te va a salvar.
+                    no publicas, no compartes tu página, no respondes, no sigues,
+                    ningún embudo del mundo te va a salvar.
                   </div>
                 </details>
               </div>
+            </div>
+          </section>
+
+          {/* FORMULARIO LEAD · NETLIFY FORMS */}
+          <section
+            id="formulario"
+            className="bg-section-dark py-16 border-t border-white/10"
+          >
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <h2 className="text-2xl md:text-3xl font-semibold mb-3">
+                Cuéntame de tu emprendimiento y te respondo por WhatsApp
+              </h2>
+              <p className="text-sm md:text-base text-white/75 mb-6">
+                Este formulario llega directo al equipo de{" "}
+                <strong>CL Tech Solutions</strong>. Llénalo solo si realmente
+                quieres avanzar con tu página.
+              </p>
+
+              <form
+                name="lead-impulso"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                className="card-hotmart px-5 py-6 grid gap-4 text-sm"
+              >
+                {/* Campo oculto obligatorio para Netlify */}
+                <input type="hidden" name="form-name" value="lead-impulso" />
+
+                {/* Honeypot (oculto para humanos) */}
+                <p className="hidden">
+                  <label>
+                    No llenar este campo: <input name="bot-field" />
+                  </label>
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-1">
+                    <label className="text-xs text-white/70">
+                      Nombre y apellido
+                    </label>
+                    <input
+                      type="text"
+                      name="nombre"
+                      required
+                      className="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <label className="text-xs text-white/70">
+                      WhatsApp (con código de país)
+                    </label>
+                    <input
+                      type="tel"
+                      name="whatsapp"
+                      required
+                      className="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-xs text-white/70">
+                    ¿Cómo se llama tu emprendimiento o negocio?
+                  </label>
+                  <input
+                    type="text"
+                    name="negocio"
+                    required
+                    className="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-xs text-white/70">
+                    ¿Qué vendes actualmente y cómo estás consiguiendo clientes?
+                  </label>
+                  <textarea
+                    name="que-vendes"
+                    rows={3}
+                    className="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+                  />
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-xs text-white/70">
+                    ¿Qué modelo te interesa más?
+                  </label>
+                  <select
+                    name="modelo-interes"
+                    className="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+                  >
+                    <option value="servicios">
+                      Modelo 1 · Servicios profesionales
+                    </option>
+                    <option value="restaurante">
+                      Modelo 2 · Restaurante / comida
+                    </option>
+                    <option value="heladeria">
+                      Modelo 3 · Heladería / postres
+                    </option>
+                    <option value="otro">Otro / No estoy seguro aún</option>
+                  </select>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-xs text-white/70">
+                    ¿Algo más que debamos saber antes de contactarte?
+                  </label>
+                  <textarea
+                    name="mensaje"
+                    rows={2}
+                    className="w-full rounded-lg border border-white/15 bg-black/40 px-3 py-2 text-sm outline-none focus:border-clturq"
+                  />
+                </div>
+
+                <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                  <button
+                    type="submit"
+                    className="btn-primary-hotmart justify-center"
+                  >
+                    Enviar mis datos · Quiero que me contacten
+                  </button>
+                  <p className="text-[11px] text-white/60">
+                    Al enviar, autorizas a CL Tech Solutions a escribirte por
+                    WhatsApp para seguir el proceso de tu página web.
+                  </p>
+                </div>
+              </form>
             </div>
           </section>
 
